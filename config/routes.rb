@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root to: 'site#index'
 
   namespace :api do
-    namspace :v1 do
-      resources :items, only [:index, :create, :destroy, :update]
+    namespace :v1 do
+      resources :items, only: [:index, :create, :destroy, :update]
     end
   end
 
